@@ -55,7 +55,7 @@ export const withPermission = (writable: boolean) =>
 
     bash: {
       // 默认禁用一切 bash
-      "*": "deny",
+      // "*": "deny",
 
       // just recipe — 唯一可用命令入口
       "just *": "allow",
