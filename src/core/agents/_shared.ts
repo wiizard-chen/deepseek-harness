@@ -65,6 +65,9 @@ export const withPermission = (writable: boolean) =>
       "rg *": "allow",
       "sg *": "allow",
       "jq *": "allow",
+      "node *": "allow",
+      "npx *": "allow",
+      "npm *": "allow",
 
       // 版本控制
       "git *": "allow",
