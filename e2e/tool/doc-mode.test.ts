@@ -31,7 +31,7 @@ describe("doc-mode", () => {
     await tmp.destroy();
   });
 
-  it("doc agent 新建 markdown 时优先使用 write", async () => {
+  it("doc agent 新建 markdown 时直接使用 write", async () => {
     await ctx.promptText(
       session,
       "新建 docs/spec.md，写一个简短设计说明，包含标题 '# Spec'，并提到 StockPoolSpec。",
