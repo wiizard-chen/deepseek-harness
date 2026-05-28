@@ -76,3 +76,29 @@ export const withPermission = (writable: boolean) =>
       "git commit *": "ask",
     },
   }) as const;
+
+export const withPlanPermission = () =>
+  ({
+    // 自定义
+    hashread: "allow",
+    hashedit: "deny",
+    hashgrep: "allow",
+    astgrep: "allow",
+    astedit: "deny",
+    // 内置
+    read: "allow",
+    edit: {
+      "*": "deny",
+      "*.md": "allow",
+      "**/*.md": "allow",
+    },
+    glob: "allow",
+    grep: "allow",
+    skill: "allow",
+    task: "allow",
+    todowrite: "allow",
+    webfetch: "allow",
+    // 禁用
+    bash: "deny",
+    lsp: "deny",
+  }) as const;

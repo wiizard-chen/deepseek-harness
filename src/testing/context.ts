@@ -18,12 +18,14 @@ export const UPSTREAM =
 
 export { type Session };
 
-export async function createContext(opt: { pluginEnabled?: boolean } = {}) {
+export async function createContext(
+  opt: { pluginEnabled?: boolean; agent?: string } = {},
+) {
   const plugin = opt.pluginEnabled !== false;
   const proxy = new LlmProxy(UPSTREAM, logDir);
   await proxy.start();
 
-  const agent = plugin ? "code" : "build";
+  const agent = opt.agent ?? (plugin ? "code" : "build");
 
   if (plugin) {
     console.log("plugin loaded (custom tools)", pluginPath);

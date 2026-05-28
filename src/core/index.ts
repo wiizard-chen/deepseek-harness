@@ -18,6 +18,7 @@ export default {
         config.agent.code = merge(config.agent.code ?? {}, { ...agents.code });
         config.agent.chat = merge(config.agent.chat ?? {}, { ...agents.chat });
         config.agent.doc = merge(config.agent.doc ?? {}, { ...agents.doc });
+        config.agent.plan = merge(config.agent.plan ?? {}, { ...agents.plan });
         config.agent.worker = merge(config.agent.worker ?? {}, {
           ...agents.worker,
         });
